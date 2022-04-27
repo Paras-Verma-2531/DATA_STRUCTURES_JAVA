@@ -147,13 +147,15 @@ public class SinglyAllFunctions {
             if(head==null||head.next==null){return;}
             int i=1;
             Node newnode=head;temp=head;
-            while(i<pos-1)
+            while(i<pos)
             {
-                temp=temp.next;
-            }newnode.next=temp.next;
-            temp.next=newnode;
+                temp=temp.next;i++;
+            }
+            //System.out.println("temp data is "+temp.data);
             head=head.next;
-
+            newnode.next=temp.next;
+            temp.next=newnode;
+            System.out.println("successfully inserted");
         }
     }
 }
