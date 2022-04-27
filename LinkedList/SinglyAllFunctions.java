@@ -117,7 +117,7 @@ public class SinglyAllFunctions {
                 temp=temp.next;
             }temp.next=newnode;
             head=head.next;
-        }
+        } System.out.println("successfully inserted");
     }
     public void EndNodeAtFront()
     {
@@ -133,7 +133,27 @@ public class SinglyAllFunctions {
             newnode.next=head;
             head=newnode;
         }
+        System.out.println("successfully inserted");
 
+    }
+    public void frontNodeAtPos(int pos)
+    {
+        if(pos<=0||pos>Node.length)
+        {
+            System.out.println("invalid position");
+        }else
+        {
+            if(head==null||head.next==null){return;}
+            int i=1;
+            Node newnode=head;temp=head;
+            while(i<pos-1)
+            {
+                temp=temp.next;
+            }newnode.next=temp.next;
+            temp.next=newnode;
+            head=head.next;
+
+        }
     }
 }
 
