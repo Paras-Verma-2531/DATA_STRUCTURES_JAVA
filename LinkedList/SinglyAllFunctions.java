@@ -9,6 +9,7 @@ public class SinglyAllFunctions {
         }// else set node as head
         head = node;
     }
+
     public void addAtEnd(int data) {
         Node node = new Node(data);
         if (head == null) {
@@ -21,12 +22,15 @@ public class SinglyAllFunctions {
             temp.next = node;// insertion at last node
         }
     }
+
     public void addAtPos(int data, int pos) {
         if (pos > Node.length || pos <= 0) {// check for invalid input
-            System.out.println("invalid position");
-            if (pos == 1) {
+            System.out.println("invalid position");}
+        else if(pos == 1) {
                 addAtFront(data);// call for addAtFront() method
-            } else {
+        }
+        else {
+                //System.out.println("here");
                 Node node = new Node(data);
                 int i = 1;
                 temp = head;
@@ -36,33 +40,70 @@ public class SinglyAllFunctions {
                 }
                 node.next = temp.next;// linking new node
                 temp.next = node;
-            }
+                //System.out.print("inserted data is "+temp.next.data);
         }
     }
-    public int deleteFromBeg()
-    {
-        int data=-1;
-        if(head!=null)
-        { Node.length--;
-            data=head.data;
-            head=head.next;
-        }return data;
-    }
-    public int deleteFromEnd()
-    {
-        int data=-1;
-        temp=head;
-        if(temp!=null)
+    public int deleteFromBeg() {
+        int data = -1;
+        if(head==null){}
+        else if(head.next==null)
         {
-            while(temp.next.next!=null)
-            {
-                temp=temp.next;
-            }data=temp.next.data;
-            temp.next=null;
-        }return data;
+            Node.length--;
+            data=head.data;
+            head=null;
+        }
+        else{
+            Node.length--;
+            data = head.data;
+            head = head.next;
+        }
+        return data;
     }
-    public int deleteFromPos(int pos)
+
+    public int deleteFromEnd() {
+        int data = -1;
+        temp = head;
+        if(head==null){}
+        else if(head.next==null){
+            data=head.data;
+            head=null;
+        }
+        else{
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            data = temp.next.data;
+            temp.next = null;
+        }
+        return data;
+    }
+    public int deleteFromPos(int pos) {
+        int data = -1;
+        if(pos<=0||pos>Node.length){}
+        if(pos==1){data=deleteFromBeg();}
+        else if(pos==Node.length){data=deleteFromEnd();}
+        else {
+            int i = 1;
+            temp = head;
+            while (i < pos - 1) {
+                temp = temp.next;
+                i++;
+            }
+            data = temp.next.data;
+            temp.next = temp.next.next;
+
+        }
+        return data;
+    }
+    public void display()
     {
-        i
+        System.out.println("the list is : ");
+        temp=head;
+        while(temp.next!=null)
+        {
+            System.out.print(temp.data+" -->");temp=temp.next;
+        }
+        System.out.println(temp.data);
     }
 }
+
