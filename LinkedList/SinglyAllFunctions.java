@@ -116,6 +116,7 @@ public class SinglyAllFunctions {
             {
                 temp=temp.next;
             }temp.next=newnode;
+            newnode.next=null;
             head=head.next;
         } System.out.println("successfully inserted");
     }
