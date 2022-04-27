@@ -105,5 +105,35 @@ public class SinglyAllFunctions {
         }
         System.out.println(temp.data);
     }
+    public void FrontNodeAtEnd()
+    {
+        if(head==null||head.next==null){return;}
+        else
+        {
+            Node newnode=head;
+            temp=head;
+            while(temp.next!=null)
+            {
+                temp=temp.next;
+            }temp.next=newnode;
+            head=head.next;
+        }
+    }
+    public void EndNodeAtFront()
+    {
+        if(head==null||head.next==null){return;}
+        else
+        {
+            temp=head;
+            while(temp.next.next!=null)
+            {
+                temp=temp.next;
+            }Node newnode=temp.next;
+            temp.next=null;
+            newnode.next=head;
+            head=newnode;
+        }
+
+    }
 }
 
