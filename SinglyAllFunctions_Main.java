@@ -6,7 +6,7 @@ public class SinglyAllFunctions_Main {
         SinglyAllFunctions sl = new SinglyAllFunctions();
         Scanner in = new Scanner(System.in);
         while (true) {
-            System.out.println("'1' for insertion At front\n'2' for insertion At End\n'3' for insertion At Pos\n'4' for deletion from Front\n'5' for deletion from end\n'6' for deletion from pos\n'7' for FrontNodeAEnd\n'8' for EndNodeAtFront\n'9' for FrontNodeAtPos\n'10' for display\n'11' for exit");
+            System.out.println("'1' for insertion At front\n'2' for insertion At End\n'3' for insertion At Pos\n'4' for deletion from Front\n'5' for deletion from end\n'6' for deletion from pos\n'7' for FrontNodeAEnd\n'8' for EndNodeAtFront\n'9' for FrontNodeAtPos\n'10' for reverse\n'11' for display\n'12' for exit");
             choice = in.nextInt();
             switch (choice) {
                 case 1:
@@ -51,9 +51,13 @@ public class SinglyAllFunctions_Main {
                     sl.frontNodeAtPos(position);
                     break;
                 case 10:
-                    sl.display();
+                    sl.reverse();
+                    System.out.println("list is reversed successfully");
                     break;
                 case 11:
+                    sl.display();
+                    break;
+                case 12:
                     System.exit(0);
                 default:
                     System.out.println("enter valid input");
