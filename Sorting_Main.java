@@ -27,8 +27,10 @@ public class Sorting_Main {
         sort.inputElements(array,size);
         bubble_Sort bl=new bubble_Sort();
         Selection_Sort sl=new Selection_Sort();
-        sl.SelectionSort(array,size);
+        //sl.SelectionSort(array,size);
         //bl.bubbleSort(array,size);
+        Merge_Sort mr=new Merge_Sort();
+        mr.mergeSort(array,0,size-1);
         sort.display(array,size);
     }
 }
