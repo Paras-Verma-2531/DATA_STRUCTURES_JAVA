@@ -158,5 +158,18 @@ public class SinglyAllFunctions {
             System.out.println("successfully inserted");
         }
     }
+    public void reverse()
+    {
+        Node current,nextnode,prev;
+        if(head==null||head.next==null){return;}
+        current=head;prev=null;
+        while(current!=null)
+        {
+            nextnode=current.next;
+            current.next=prev;
+            prev=current;
+            current=nextnode;
+        }head=prev;
+    }
 }
 
