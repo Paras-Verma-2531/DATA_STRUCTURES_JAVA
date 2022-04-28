@@ -26,7 +26,9 @@ public class Sorting_Main {
         Sorting_Main sort=new Sorting_Main();
         sort.inputElements(array,size);
         bubble_Sort bl=new bubble_Sort();
-        bl.bubbleSort(array,size);
+        Selection_Sort sl=new Selection_Sort();
+        sl.SelectionSort(array,size);
+        //bl.bubbleSort(array,size);
         sort.display(array,size);
     }
 }
