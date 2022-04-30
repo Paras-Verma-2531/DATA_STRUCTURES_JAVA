@@ -30,7 +30,9 @@ public class Sorting_Main {
         //sl.SelectionSort(array,size);
         //bl.bubbleSort(array,size);
         Merge_Sort mr=new Merge_Sort();
-        mr.mergeSort(array,0,size-1);
+        //mr.mergeSort(array,0,size-1);
+        Quick_Sort qs= new Quick_Sort();
+        qs.QuickSort(array,0,size-1);
         sort.display(array,size);
     }
 }
