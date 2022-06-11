@@ -1,7 +1,5 @@
 package DSA_PRAC.SORTING;
-
 import java.util.Scanner;
-
 public class InsertionSort {
     public void insertionSort(int[] array)
     {
