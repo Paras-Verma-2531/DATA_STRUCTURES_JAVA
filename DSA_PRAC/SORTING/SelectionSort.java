@@ -9,9 +9,7 @@ public class SelectionSort {
             for(int j=i+1;j<array.length;j++)
             {
                 if(array[j]<array[min])
-                {
                     min=j;
-                }
             }
             int temp=array[i];
             array[i]=array[min];
