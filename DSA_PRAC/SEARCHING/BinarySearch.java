@@ -23,7 +23,7 @@ public class BinarySearch {
             if(array[mid]<element)
                 lb=mid+1;
             if(array[mid]==element)
-                return 1;
+                return mid;
         }return -1;
     }
     public void inputElement(int[]array,int size)
@@ -42,6 +42,6 @@ public class BinarySearch {
         int[] array=new int[10];
         bs.inputElement(array,10);
         int res=bs.binarySearch(array, bs.element);
-        System.out.println(res==1?"the element is present":"element is not present");
+        System.out.println(res==1?"the element is present at "+res+" location":"element is not present");
     }
 }
