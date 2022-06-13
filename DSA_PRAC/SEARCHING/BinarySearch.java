@@ -1,5 +1,4 @@
 package DSA_PRAC.SEARCHING;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -45,3 +44,4 @@ public class BinarySearch {
         System.out.println(res==1?"the element is present at "+res+" location":"element is not present");
     }
 }
+ 
