@@ -41,7 +41,7 @@ public class BinarySearch {
         int[] array=new int[10];
         bs.inputElement(array,10);
         int res=bs.binarySearch(array, bs.element);
-        System.out.println(res==1?"the element is present at "+res+" location":"element is not present");
+        System.out.println(res!=-1?"the element is present at "+(res+1)+" location":"element is not present");
     }
 }
  
