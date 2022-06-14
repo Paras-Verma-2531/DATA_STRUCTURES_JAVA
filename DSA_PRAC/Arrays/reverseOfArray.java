@@ -1,4 +1,4 @@
-package DSA_PRAC;
+package DSA_PRAC.Arrays;
 public class reverseOfArray {
     public static void swap(int[] array,int i , int j)
     {
