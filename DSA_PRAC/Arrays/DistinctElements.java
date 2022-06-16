@@ -7,15 +7,15 @@ public class DistinctElements {
             int j = 0;
             while (j < i) {
                 if (array[j] == array[i]) {
-                    count = 0;
+                    count = 0;// duplicate present
                     break;
                 }
-                count++;j++;
+                count++;j++;// duplicate absent
             }
             if (count!=0)
-                res++;
+                res++;// increment the res by 1
         }if(array.length!=0)
-            return res+1;
+            return res+1;// else it misses out the first element.
         return res;
     }
 
