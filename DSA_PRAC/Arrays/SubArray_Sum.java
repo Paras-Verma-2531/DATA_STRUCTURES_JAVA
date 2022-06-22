@@ -20,7 +20,7 @@ public class SubArray_Sum {
             }
             map.put(cursum,i);
         }
-        System.out.println("the sum "+sum +" is present in the subArray "+start +" : "+end);
+        System.out.println(end!=-1?"the sum "+sum +" is present in the subArray "+start +" : "+end:"sum is not present");
     }
 
     public static void main(String[] args) {
