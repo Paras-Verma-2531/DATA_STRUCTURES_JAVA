@@ -10,14 +10,23 @@ public class ReverseStack_Recursive {
         insertAtBottom(stack,x);
         stack.push(num);
     }
+    public static void reverse(Stack<Integer>stack)
+    {
+        if(stack.isEmpty())
+            return;
+        int x=stack.pop();
+        reverse(stack);
+        insertAtBottom(stack,x);
+    }
     public static void main(String[] args) {
         Stack<Integer>stack=new Stack<>();
         int i=1;
         while(i<=5)
             stack.push(i++);
-        System.out.println(stack);// before insertAtBottom method
-        insertAtBottom(stack,6);
+        System.out.println(stack);//Normal stack
+        //insertAtBottom(stack,6);
+        reverse(stack);
         for(int num:stack)
-            System.out.print(num+" ");// after insertAtBottom
+            System.out.print(num+" ");// Reverse Stack
     }
 }
