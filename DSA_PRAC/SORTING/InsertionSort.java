@@ -1,10 +1,9 @@
 package DSA_PRAC.SORTING;
 import java.util.Scanner;
 public class InsertionSort {
-    public void insertionSort(int[] array)
-    {
-        int k=0;
-        for(int i=1;i<=9;i++)
+    public void insertionSort(int[] array,int size)
+    {int k=0;
+        for(int i=1;i<size;i++)
         {
             int temp=array[i];
             k=i-1;
@@ -25,10 +24,8 @@ public class InsertionSort {
             System.out.print("enter the "+(i+1)+" number: ");
             arr[i]=in.nextInt();
         }
-        new InsertionSort().insertionSort(arr);
+        new InsertionSort().insertionSort(arr,10);
         for(int i:arr)
-        {
             System.out.println(i);
-        }
     }
 }
