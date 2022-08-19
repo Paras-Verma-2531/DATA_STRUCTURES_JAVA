@@ -1,7 +1,5 @@
 package DSA_PRAC.SORTING;
-
 import java.util.Scanner;
-
 public class BubbleSort {
     /*
     In BubbleSort, we compare two adjacent elements from the leftside and oif leftmost is greater than other element, we will swap these two elements.
@@ -10,11 +8,11 @@ public class BubbleSort {
     Time complexity of BubbleSort is :
     O(n^2)--> Big O of n^2
      */
-    public void bubbleSort(int[] array)
+    public void bubbleSort(int[] array,int size)
     {int temp=0;
-        for(int i=0;i<9;i++)
+        for(int i=0;i<size-1;i++)
         {
-            for(int j=0;j<9-i;j++)
+            for(int j=0;j<size-1-i;j++)
             {
                 if(array[j]>array[j+1])
                 {
@@ -33,10 +31,8 @@ public class BubbleSort {
             System.out.print("enter the "+(i+1)+" number: ");
             arr[i]=in.nextInt();
         }
-        new BubbleSort().bubbleSort(arr);
+        new BubbleSort().bubbleSort(arr,10);
         for(int i:arr)
-        {
             System.out.println(i);
-        }
     }
 }
