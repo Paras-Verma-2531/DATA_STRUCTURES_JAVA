@@ -8,13 +8,9 @@ public class MergeSort {
         int[] temp1=new int[size1];
         int[] temp2=new int[size2];
         for(int i=0;i<size1;i++)
-        {
-            temp1[i]=arr[i+initial];
-        }
+            temp1[i]=arr[i+initial];//copy the elements of first partition
         for(int i=0;i<size2;i++)
-        {
-            temp2[i]=arr[mid+1+i];
-        }
+            temp2[i]=arr[mid+1+i];//copy the elements of second partition
         int pointer1=0;int pointer2=0;
         int i=initial;
         while(pointer1<size1&&pointer2<size2)
@@ -40,24 +36,20 @@ public class MergeSort {
     public void mergeSort(int[] arr,int initial,int end) {
         if (initial < end) {
             int mid = (initial + end) / 2;
-            mergeSort(arr, initial, mid);
-            mergeSort(arr, mid + 1, end);
-            merge(arr, initial, mid, end);
+            mergeSort(arr, initial, mid);//divide the array [initial--mid]
+            mergeSort(arr, mid + 1, end);//mid+1---end
+            merge(arr, initial, mid, end);//now merge them
         }
     }
     public static void main(String[] args) {
-        Scanner in= new Scanner(System.in);
-        int[] arr= new int[10];
-        for(int i=0;i<10;i++)
-        {
-            System.out.print("enter the "+(i+1)+" number: ");
-            arr[i]=in.nextInt();
+        Scanner in = new Scanner(System.in);
+        int[] arr = new int[10];
+        for (int i = 0; i < 10; i++) {
+            System.out.print("enter the " + (i + 1) + " number: ");
+            arr[i] = in.nextInt();
         }
-        new MergeSort().mergeSort(arr,0,9);
-        for(int i:arr)
-        {
+        new MergeSort().mergeSort(arr, 0, 9);
+        for (int i : arr)
             System.out.println(i);
-        }
-
     }
 }
