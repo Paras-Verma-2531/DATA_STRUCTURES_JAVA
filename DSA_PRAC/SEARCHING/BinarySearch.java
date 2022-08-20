@@ -1,13 +1,11 @@
 package DSA_PRAC.SEARCHING;
 import java.util.Arrays;
 import java.util.Scanner;
-
 public class BinarySearch {
     /*
     BinarySearch provides an optimisation over linear search.  it searches an element in log(n) time. it only works on sorted arrays.
     it compares an element with mid and performs corresponding operations.
-
-     */
+    */
     private  int element;
     public int binarySearch(int[] array,int element)
     {
