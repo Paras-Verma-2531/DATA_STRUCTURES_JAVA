@@ -3,35 +3,22 @@ import java.util.Scanner;
 public class MergeSort {
     public void merge(int[] arr,int initial,int mid,int end)
     {
-        int size1=mid-initial+1;
-        int size2=end-mid;
-        int[] temp1=new int[size1];
-        int[] temp2=new int[size2];
-        for(int i=0;i<size1;i++)
-            temp1[i]=arr[i+initial];//copy the elements of first partition
-        for(int i=0;i<size2;i++)
-            temp2[i]=arr[mid+1+i];//copy the elements of second partition
-        int pointer1=0;int pointer2=0;
-        int i=initial;
-        while(pointer1<size1&&pointer2<size2)
+        int[] newarr=new int[end-initial+1];
+        int i=initial;int j=mid+1;int k=initial;
+        while(i<=mid&&j<=end)
         {
-            if(temp1[pointer1]<=temp2[pointer2])
-            {
-                arr[i]=temp1[pointer1];i++;pointer1++;
-            }
+            if(arr[i]<arr[j])
+                newarr[k]=arr[i++];
             else
-            {
-                arr[i]=temp2[pointer2];i++;pointer2++;
-            }
+                newarr[k]=arr[j++];
+            k++;
         }
-        while(pointer1<size1)
-        {
-            arr[i]=temp1[pointer1];i++;pointer1++;
-        }
-        while(pointer2<size2)
-        {
-            arr[i]=temp2[pointer2];i++;pointer2++;
-        }
+        while(i<=mid)
+            newarr[k++]=arr[i++];
+        while(j<=end)
+            newarr[k++]=arr[j++];
+        for(k=initial;k<=end;k++)
+            arr[k]=newarr[k];
     }
     public void mergeSort(int[] arr,int initial,int end) {
         if (initial < end) {
