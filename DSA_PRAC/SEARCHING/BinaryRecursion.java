@@ -7,12 +7,12 @@ public class BinaryRecursion {
     {
         if(lb>ub)
             return -1;
-        int mid=(lb+ub)/2;
+        int mid=(lb+ub)/2;//find mid
         if(array[mid]==element)
-            return mid;
+            return mid;// if equal return mid pos.
         if(array[mid]<element)
-            return binarySearch(array,mid+1,ub,element);
-        return binarySearch(array,lb,mid-1,element);
+            return binarySearch(array,mid+1,ub,element);// recursive call [ set low as mid+1]
+        return binarySearch(array,lb,mid-1,element);// recursive call [set high as mid-1]
     }
     public void inputElement(int[]array,int size)
     {
