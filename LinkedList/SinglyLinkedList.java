@@ -2,9 +2,7 @@ package LinkedList;
 public class SinglyLinkedList {
    public Node head;
     public Node temp;
-
     public void add(int data) {
-
         Node node = new Node(data);
         if (head == null) {
             head = temp = node;
@@ -13,7 +11,6 @@ public class SinglyLinkedList {
             temp = node;
         }
     }
-
     public void display() {
         if (head == null) {
             System.out.println("list is empty");
@@ -26,17 +23,15 @@ public class SinglyLinkedList {
             System.out.println(temp.data);
         }
     }
-
     public void addAtBeg(int data) {
         if (head == null) {
             add(data);
         } else {
-            Node node = new Node(data);
+            Node node = new Node(data);// create new node
             node.next = head;
             head = node;
         }
     }
-
     public void addAtEnd(int data) {
         if (head == null) {
             add(data);
@@ -49,7 +44,6 @@ public class SinglyLinkedList {
             temp.next = node;
         }
     }
-
     public int length() {
         int c = 0;
         if (head != null) {
@@ -79,7 +73,6 @@ public class SinglyLinkedList {
             temp.next = node;
         }
     }
-
     public  int  deleteFromBeg() {
         int data;
         if (head == null) {
@@ -105,7 +98,6 @@ public class SinglyLinkedList {
             temp.next = null;
         }
     }
-
     public void deleteFromAnyPos(int pos) {
         if (pos < 1 || pos > length()) {
             System.out.println("invalid position!!");
