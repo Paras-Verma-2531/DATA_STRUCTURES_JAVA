@@ -21,7 +21,7 @@ public class CyclicSort {
     { int i=0;
         while(i<size/2) {// run the loop till n/2 [since for n/2 we will be swapping 2*n/2 i,e n numbers thus whole array is swapped]
             int correct = arr[i] - 1;
-            int i1 = arr[i] != arr[correct] ? swap(arr, i, arr[i] - 1) : i++;
+            int ob = arr[i] != arr[correct] ? swap(arr, i, arr[i] - 1) : i++;
         }
     }
     public static void main(String[] args) {

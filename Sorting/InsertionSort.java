@@ -12,8 +12,8 @@ public class InsertionSort {
         }
     }
     public static void main(String[] args) {
-        int[] arr={10,9,8,7,6,-5,-4,-3,-2,-1};
-        new InsertionSort().insertionSort(arr,10);//anonymous object used for function calling
+        int[] arr={10,9,8,7,6,5,4,3,2,1};
+        new InsertionSort().insertionSort(arr,10);//anonymous object used for method calling
         for(int i: arr)
             System.out.println(i);
     }
