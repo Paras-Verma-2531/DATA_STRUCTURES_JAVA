@@ -11,7 +11,8 @@ public class CyclicSort {
     ==================================
      */
     public static int swap(int[]arr,int i,int j)
-    {// A method which swaps the value at given index
+    {
+        // A method which swaps the value at given index
         int temp=arr[i];
         arr[i]=arr[j];
         arr[j]=temp;
