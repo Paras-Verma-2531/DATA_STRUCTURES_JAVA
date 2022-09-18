@@ -8,13 +8,13 @@ public class Heap {
         heapSort(arr,6);
         System.out.println(Arrays.toString(arr));
     }
-    public  static void BuildHeap(int[]arr,int size)
+    public static void BuildHeap(int[]arr,int size)
     {
         for(int i=size/2;i>0;i--)// start the loop from size/2 because in an array there are n/2 elements which are leaf nodes
             //thus they are already a heap ----[starting index of leaf node: [[n/2]+1-----n]
             heapify(arr,size,i);
     }
-    private  static void heapify(int[] arr, int size, int i) {
+    public static void heapify(int[] arr, int size, int i) {
         int largest=i,left=2*i,right=2*i+1;//store the position of left and right child for further calculations
         if(left<=size && arr[largest]<arr[left])largest=left;// left<=size so that they don't cross the length of array
         if(right<=size&& arr[largest]<arr[right])largest=right;
@@ -24,12 +24,11 @@ public class Heap {
             heapify(arr,size,largest);// recursive call
         }
     }
-    private static void heapSort(int[] arr,int size)
+    public static void heapSort(int[] arr,int size)
     {
         for(int i=size;i>1;i--) {
             swap(arr, 1, i);
-            heapify(arr,i-1,1);
+            heapify(arr,i-1,1);//size -1 because now the last element is sorted i,e the largest ele.
         }
-        
     }
 }
