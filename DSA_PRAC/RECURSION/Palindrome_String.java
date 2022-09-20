@@ -8,7 +8,6 @@ public class Palindrome_String {
         if(s.charAt(left)!=s.charAt(right))// if character does not match
             return false;
         return isPalindrome(s,left+1,right-1);// recursive call
-
     }
     public static void main(String[] args) {
         String name="naman";
