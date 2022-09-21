@@ -9,22 +9,8 @@ public class Sorting_Main {
             System.out.println(i);
         }
     }
-    public void inputElements(int array[],int size)
-    {Scanner in=new Scanner(System.in);
-        for(int i=0;i<size;i++)
-        {
-            System.out.print("enter the "+(i+1) +" element: ");
-            array[i]=in.nextInt();
-        }
-    }
     public static void main(String[] args) {
         Scanner in=new Scanner(System.in);
-        int size;
-        System.out.print("enter the size of array: ");
-        size=in.nextInt();
-        int array[]=new int[size];
-        Sorting_Main sort=new Sorting_Main();
-        sort.inputElements(array,size);
         bubble_Sort bl=new bubble_Sort();
         Selection_Sort sl=new Selection_Sort();
         //sl.SelectionSort(array,size);
@@ -32,7 +18,8 @@ public class Sorting_Main {
         Merge_Sort mr=new Merge_Sort();
         //mr.mergeSort(array,0,size-1);
         Quick_Sort qs= new Quick_Sort();
-        qs.QuickSort(array,0,size-1);
-        sort.display(array,size);
+        int[]array={10,9,8,7,6,5,4,3,2,1};
+        qs.QuickSort(array,0,9);
+        new Sorting_Main().display(array,10);
     }
 }
