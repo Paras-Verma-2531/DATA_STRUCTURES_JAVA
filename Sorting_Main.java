@@ -20,6 +20,7 @@ public class Sorting_Main {
         Quick_Sort qs= new Quick_Sort();
         int[]array={10,9,8,7,6,5,4,3,2,1};
         qs.QuickSort(array,0,9);
+        //display method
         new Sorting_Main().display(array,10);
     }
 }
