@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern28(5);
+        pattern30(5);
     }
     /*
      *
@@ -72,7 +72,7 @@ public class Pattern_1 {
      * * *
      * *
      *
-*/
+    */
     static void pattern5(int n) {
         for(int row=1;row<=2*n-1;row++)// total no of rows=2*n-1 if starting from 1: if 0: then 2*n
         {
@@ -90,10 +90,9 @@ public class Pattern_1 {
  *  *  *  *  *
   *  *  *  *
     *  *  *
-      *  *
+     *   *
        *
-
-     */
+*/
     static void pattern28(int n)
     {
         for(int row=1;row<=2*n-1;row++)
@@ -104,6 +103,24 @@ public class Pattern_1 {
             for(int i=1;i<=totalSpaceInRow;i++) System.out.print(" ");//print spaces
             for(int col=1;col<=totalColsInRow;col++)System.out.print("* ");//print ("* )
             System.out.println();// after completion of row :: move to next Line
+        }
+    }
+    /*
+        1
+      2 1 2
+    3 2 1 2 3
+  4 3 2 1 2 3 4
+5 4 3 2 1 2 3 4 5
+*/
+    static void pattern30(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            int spacesInRow=n-row;
+            for(int i=1;i<=spacesInRow;i++) System.out.print("  ");//print spaces for n-row times
+            for(int col=row;col>=1;col--) System.out.print(col+" ");// reverse printing
+            for(int col=2;col<=row;col++) System.out.print(col+" ");//forward from 2---row
+            System.out.println();
         }
     }
 }
