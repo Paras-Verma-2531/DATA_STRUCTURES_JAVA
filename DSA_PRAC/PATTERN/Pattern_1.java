@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern5(5);
+        pattern28(5);
     }
     /*
      *
@@ -80,6 +80,30 @@ public class Pattern_1 {
             // then it is 2*n-row
             for(int col=1;col<=totalColsInRow;col++) System.out.print("* ");
             System.out.println();
+        }
+    }
+    /*
+     *
+    *  *
+   *  *  *
+  *  *  *  *
+ *  *  *  *  *
+  *  *  *  *
+    *  *  *
+      *  *
+       *
+
+     */
+    static void pattern28(int n)
+    {
+        for(int row=1;row<=2*n-1;row++)
+        {
+            int totalColsInRow=row>n?2*n-row:row;//same as pattern 5
+            int totalSpaceInRow=row>n?row-n:n-row;// now since very row has some spaces as well
+            //therefore, no of spaces:: row>n?row-n:n-row
+            for(int i=1;i<=totalSpaceInRow;i++) System.out.print(" ");//print spaces
+            for(int col=1;col<=totalColsInRow;col++)System.out.print("* ");//print ("* )
+            System.out.println();// after completion of row :: move to next Line
         }
     }
 }
