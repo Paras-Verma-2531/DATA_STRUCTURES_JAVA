@@ -27,7 +27,7 @@ public class Heap {
     public static void heapSort(int[] arr,int size)
     {
         for(int i=size;i>1;i--) {
-            swap(arr, 1, i);
+            swap(arr, 1, i);//This will bring the array in sorted manner
             heapify(arr,i-1,1);//size -1 because now the last element is sorted i,e the largest ele.
         }
     }
