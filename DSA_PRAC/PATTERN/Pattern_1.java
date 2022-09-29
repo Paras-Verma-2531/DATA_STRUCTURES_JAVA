@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern8(5);
+        pattern11(5);
     }
     /*
      *
@@ -136,6 +136,58 @@ public class Pattern_1 {
         }
     }
     /*
+     *********
+      *******
+       *****
+        ***
+         *
+     */
+    static void pattern9(int n)
+    {
+        for(int row=n;row>=1;row--)
+        {
+            int spacesInRow=n-row;
+            int colInRow=2*row-1;
+            for(int spaces=1;spaces<=spacesInRow;spaces++) System.out.print(" ");
+            for(int col=1;col<=colInRow;col++) System.out.print("*");
+            System.out.println();
+        }
+    }
+    /*
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
+     */
+    static void pattern10(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            int spacesInCol=n-row;
+            for(int spaces=1;spaces<=spacesInCol;spaces++) System.out.print(" ");
+            for(int col=1;col<=row;col++) System.out.print("* ");
+            System.out.println();
+        }
+    }
+    /*
+     * * * * *
+      * * * *
+       * * *
+        * *
+         *
+     */
+    static void pattern11(int n)
+    {
+        for(int row=n;row>=1;row--)
+        {
+            int spacesInCol=n-row;
+            for(int spaces=1;spaces<=spacesInCol;spaces++) System.out.print(" ");
+            for(int col=1;col<=row;col++) System.out.print("* ");
+            System.out.println();
+        }
+    }
+    /*
       1
     2 1 2
   3 2 1 2 3
@@ -143,8 +195,7 @@ public class Pattern_1 {
   3 2 1 2 3
     2 1 2
       1
-*/
-    static void pattern17(int n)
+*/static void pattern17(int n)
     {
         for(int row=1;row<=2*n-1;row++)
         {
