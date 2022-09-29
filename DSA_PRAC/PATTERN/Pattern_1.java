@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern17(4);
+        pattern7(5);
     }
     /*
      *
@@ -79,6 +79,41 @@ public class Pattern_1 {
             int totalColsInRow=row>n?2*n-row:row;// since for the first part the "*" in colm increases which is equal to row,when row>n
             // then it is 2*n-row
             for(int col=1;col<=totalColsInRow;col++) System.out.print("* ");
+            System.out.println();
+        }
+    }
+    /*
+         *
+        **
+       ***
+      ****
+     *****
+     */
+    static void pattern6(int n)
+    { int k=n;
+        for(int row=1;row<=n;row++)
+        {
+            int spacesInCol=k--;
+            for(int spaces=1;spaces<=k;spaces++) System.out.print(" ");
+            for(int col=1;col<=row;col++) System.out.print("*");
+            System.out.println();
+        }
+
+    }
+    /*
+     *****
+      ****
+       ***
+        **
+         *
+     */
+    static void pattern7(int n)
+    {
+        for(int row=n;row>=1;row--)
+        {
+            int spacesInRow=n-row;
+            for(int spaces=1;spaces<=spacesInRow;spaces++) System.out.print(" ");
+            for(int col=1;col<=row;col++) System.out.print("*");
             System.out.println();
         }
     }
