@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern7(5);
+        pattern8(5);
     }
     /*
      *
@@ -114,6 +114,24 @@ public class Pattern_1 {
             int spacesInRow=n-row;
             for(int spaces=1;spaces<=spacesInRow;spaces++) System.out.print(" ");
             for(int col=1;col<=row;col++) System.out.print("*");
+            System.out.println();
+        }
+    }
+    /*
+         *
+        ***
+       *****
+      *******
+     *********
+     */
+    static void pattern8(int n)
+    {
+        for(int row=1;row<=n;row++)
+        {
+            int colInRow=2*row-1;
+            int spacesInRow=n-row;
+            for(int spaces=1;spaces<=spacesInRow;spaces++) System.out.print(" ");
+            for(int col=1;col<=colInRow;col++) System.out.print("*");
             System.out.println();
         }
     }
