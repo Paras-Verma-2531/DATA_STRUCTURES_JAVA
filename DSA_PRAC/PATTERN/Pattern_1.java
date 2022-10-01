@@ -230,13 +230,13 @@ public class Pattern_1 {
         System.out.println("     *");
       for(int row=1;row<n;row++)
       {
-        int spacesInrow = n - row;
-        int colInRow = (row >= 1 && row < n-1) ? 1 : 2 * row+1;
-        int spacesInCol = (row >=1 && row < n-1) ?2*row-1: 0;
-        for (int spaces = 1; spaces <= spacesInrow; spaces++) System.out.print(" ");
+        int spacesInrow = n - row;// spacesInRow=n-row i,e for first we have 4 spaces then 3 ...
+        int colInRow = (row >= 1 && row < n-1) ? 1 : 2 * row+1;// no of * for nth row is 2*row+1 else just run the loop once
+        int spacesInCol = (row >=1 && row < n-1) ?2*row-1: 0;// similarly for spaces
+        for (int spaces = 1; spaces <= spacesInrow; spaces++) System.out.print(" ");// leftmost spaces
         for (int col=1;col<=colInRow; col++) {
-          if (colInRow==2*n-1) System.out.print("*");
-          else {
+          if (colInRow==2*n-1) System.out.print("*");// 2*n-1 "*"
+          else {// for 2 to n-1
             System.out.print("*");
             for (int space = 1; space <= spacesInCol; space++) System.out.print(" ");
             System.out.print("*");
