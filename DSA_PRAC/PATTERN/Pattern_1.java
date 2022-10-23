@@ -8,7 +8,7 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern13(5);
+        pattern12(5);
     }
     /*
      *
