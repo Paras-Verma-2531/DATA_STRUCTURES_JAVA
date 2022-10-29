@@ -14,7 +14,7 @@ public class SieveOfEratosthenes {
         for(int i=2;i*i<=n;i++)// start the loop from 2 till n^(1/2)
         {
             for(int j=2*i;j<=n;j+=i)// make the multiple of i as false
-                arr[j]=false;
+                 arr[j]=false;
         }
         return arr;
     }
