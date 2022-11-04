@@ -12,7 +12,7 @@ public class QuickSort {
         int end_pos = end;
         int pivot = array[initial];
         while (start < end_pos) {
-            while (array[start] <= pivot)
+            while (start<=end_pos&&array[start] <= pivot)
                 start++;// increment start till a[start]<=pivot
             while (array[end_pos] > pivot)
                 end_pos--;// decrement end_pos till a[end_pos]>pivot
