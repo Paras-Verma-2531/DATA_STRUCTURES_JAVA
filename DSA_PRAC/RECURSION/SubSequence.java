@@ -4,7 +4,7 @@ public class SubSequence {
     {
         helper("",string);
     }
-    private void helper(String s, String string) {
+    private void helper(String s,String string) {
         if(string.isEmpty()) {System.out.println(s);return;}
         helper(s+string.charAt(0),string.substring(1));//include that character
         helper(s,string.substring(1));//ignore that character
