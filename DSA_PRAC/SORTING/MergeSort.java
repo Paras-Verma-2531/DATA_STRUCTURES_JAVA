@@ -4,7 +4,7 @@ public class MergeSort {
     public void merge(int[] arr,int initial,int mid,int end)
     {
         int[] newarr=new int[end-initial+1];
-        int i=initial;int j=mid+1;int k=initial;
+        int i=initial;int j=mid+1;int k=0;
         while(i<=mid&&j<=end)
         {
             if(arr[i]<arr[j])
@@ -18,7 +18,7 @@ public class MergeSort {
         while(j<=end)
             newarr[k++]=arr[j++];
         for(k=initial;k<=end;k++)
-            arr[k]=newarr[k];
+            arr[k]=newarr[k-initial];
     }
     public void mergeSort(int[] arr,int initial,int end) {
         if (initial < end) {
