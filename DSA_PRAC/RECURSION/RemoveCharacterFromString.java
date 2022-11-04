@@ -6,12 +6,14 @@ public class RemoveCharacterFromString {
     }
     /*
     Approach 1: passing argument in each function call which is newly build string
-
+====================================================================
     private String helper(String s, String string,int index) {
         if(index>string.length()-1)return s;
         if(string.charAt(index)=='a')return helper(s,string,index+1);
         return helper(s+string.charAt(index),string,index+1);
     }
+    ===============================================================
+     */
     /*
     2 nd Approach : Without using helper string
      */
