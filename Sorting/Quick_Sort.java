@@ -24,8 +24,8 @@ public class Quick_Sort {
                 array[end_p] = temp;
             }
         }
-        int temp = array[initial];
-        array[initial]=array[end_p];
+        int temp = array[end];
+        array[end]=array[end_p];
         array[end_p]=temp;
         return end_p;
     }
