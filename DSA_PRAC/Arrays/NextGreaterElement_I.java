@@ -17,6 +17,7 @@ public class NextGreaterElement_I {
                 stack.pop();
             nums1[i]=stack.isEmpty()?-1:stack.peek();
             stack.clear();
-        }return nums1;
+        }
+        return nums1;
     }
 }
