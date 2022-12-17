@@ -10,7 +10,7 @@ public class DetectCycle {
             slow=slow.next;
             fast=fast.next.next;
             if(fast==slow)
-                return true;
+                return true;//cycle present
         }return false;
     }
     public static void main(String[] args) {
