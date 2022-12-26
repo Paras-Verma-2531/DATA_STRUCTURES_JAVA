@@ -9,7 +9,7 @@ public class SumOfDigits {
         if(n==0)return 0;
         return n%10+sumOfDigits(n/10);
         /*since sum of digits [1342]=1+3+4+2
-        which can be achieved by n%109giving the last no)thus adding it to the n/10[extracting the last no.]
+        which can be achieved by n%10 (giving the last no)thus adding it to the n/10[extracting the last no.]
         repeating the process till n!=0
          */
     }
