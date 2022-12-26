@@ -16,10 +16,8 @@ public class MergeSort {
         int i=start,j=mid+1,k=0;
         while(i<=mid&&j<=end)
         {
-            if(arr[i]<arr[j]){newarr[k]=arr[i];i++;}
-            else
-            { newarr[k]=arr[j];j++;}
-            k++;
+            if(arr[i]<arr[j])newarr[k++]=arr[i++];
+            else newarr[k++]=arr[j++];
         }
         while(i<=mid)newarr[k++]=arr[i++];
         while(j<=end)newarr[k++]=arr[j++];
