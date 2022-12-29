@@ -95,14 +95,27 @@ public class LL {
     public static int getHead() {
         return head.data;
     }
-    private void helper(Node head, int val, int ind) {
+      /*private void helper(Node head, int val, int ind) {
+
+        Approach 1: without returning the node [ only runs till ind-1]
         if(ind==1)
             head.next= new Node(val,head.next);
         else helper(head.next,val,ind-1);
-    }
+        }
+        */
     public void insertUsingRec(int val,int ind)
     {
-        helper( head,val,ind);
+        //helper( head,val,ind);
+        head=insertUsingRec(head,val,ind);
     }
 
+    private Node insertUsingRec(Node head, int val, int ind) {
+        if(ind==0)
+            return new Node(val,head.next);//newly created node is returned to it's caller
+        else {
+            head.next=insertUsingRec(head.next, val, ind - 1);// change would ony occur at ind node[ head.next=node]
+            //else will return the same head; i,e caller
+            return head;
+        }
+    }
 }
