@@ -1,6 +1,6 @@
 package DSA_PRAC.linkedlist;
 public class LL {
-    private Node head,tail;
+    private static Node head,tail;
     private int size;
     public LL()
     {
@@ -78,8 +78,7 @@ public class LL {
         if(pos>1&&pos<=size)
         {
            Node temp=get(pos-1);
-            Node node =new Node(val,temp.next);
-            temp.next=node;
+            temp.next= new Node(val,temp.next);
             return;
         }
         System.out.println("Invalid position");
@@ -93,4 +92,17 @@ public class LL {
             temp=temp.next;
         }System.out.println("END");
     }
+    public static int getHead() {
+        return head.data;
+    }
+    private void helper(Node head, int val, int ind) {
+        if(ind==1)
+            head.next= new Node(val,head.next);
+        else helper(head.next,val,ind-1);
+    }
+    public void insertUsingRec(int val,int ind)
+    {
+        helper( head,val,ind);
+    }
+
 }

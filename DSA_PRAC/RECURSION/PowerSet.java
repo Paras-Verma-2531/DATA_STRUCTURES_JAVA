@@ -1,7 +1,5 @@
 package DSA_PRAC.RECURSION;
-
 import java.util.ArrayList;
-
 public class PowerSet {
     /*
     Recursive approach used to find power set of a string
