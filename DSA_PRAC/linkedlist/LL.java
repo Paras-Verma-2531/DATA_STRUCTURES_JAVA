@@ -21,7 +21,8 @@ public class LL {
     }
     private ListNode get(int index)
     {
-        int i=1;ListNode temp=head;
+        int i=1;
+        ListNode temp=head;
         while(i<index){temp=temp.next;i++;}
         return temp;
     }
@@ -118,17 +119,19 @@ public class LL {
         }
     }
     //Questions:: find Middle of the List
-    public  ListNode findMiddle(ListNode head)
+    public ListNode findMiddle(ListNode head)
     {
         ListNode fast=head,slow=null;
         while(fast!=null&&fast.next!=null)
         {
             slow=slow==null?head:slow.next;
             fast=fast.next.next;
-        }ListNode mid=slow.next;
+        }
+        ListNode mid=slow.next;
         slow.next=null;
         return mid;
     }
+    //mergeSort on LinkedList
     public ListNode mergeSort(ListNode head)
     {
         if(head==null||head.next==null)return head;
@@ -137,7 +140,7 @@ public class LL {
         ListNode right=mergeSort(mid);
         return merge(left,right);
     }
-    public ListNode merge(ListNode list1,ListNode list2)
+    public ListNode merge(ListNode list1, ListNode list2)
     {
         ListNode newhead=new ListNode(-1);
         ListNode temp=newhead;
@@ -148,6 +151,27 @@ public class LL {
             temp=temp.next;
             temp.next=list1!=null?list1:list2;
         }return newhead.next;
+    }
+    //in-place reversal of LinkedList
+    public ListNode reverseList(ListNode head,int num) {
+        if(head==null||head.next==null)return head;
+        ListNode prev=null,curr=head,nextnode=head;
+        while(curr!=null)
+        {
+            nextnode=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=nextnode;
+        }return prev;
+    }
+    //recursive reversal of LinkedList
+    public ListNode reverseList(ListNode head) {
+        if(head==null||head.next==null)return head;
+        ListNode newhead=reverseList(head.next);
+        ListNode newnode=head.next;
+        newnode.next=head;
+        head.next=null;
+        return newhead;
     }
     public static void main(String[] args) {
         LL list=new LL();
@@ -160,6 +184,8 @@ public class LL {
         list.insertAtLast(112);
         //System.out.println(list.findMiddle(head).data);
         head=list.mergeSort(head);
+        head=list.reverseList(head);
         list.display();
+
     }
 }
