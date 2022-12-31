@@ -6,9 +6,9 @@ public class LL {
     {
         this.size=0;
     }
-    private class Node {
+     private class Node {
         private int data;
-        private Node next;
+         private Node next;
         public Node(int data, Node next) {
             this.data = data;
             this.next = next;
@@ -92,8 +92,8 @@ public class LL {
             temp=temp.next;
         }System.out.println("END");
     }
-    public static int getHead() {
-        return head.data;
+    public static Node getHead() {
+        return head;
     }
       /*private void helper(Node head, int val, int ind) {
 
@@ -117,5 +117,21 @@ public class LL {
             //else will return the same head; i,e caller
             return head;
         }
+    }
+    //Questions:: find Middle of the List
+    public  Node findMiddle(Node head)
+    {
+        Node fast=head,slow=head;
+        while(fast!=null&&fast.next!=null)
+        {
+            slow=slow.next;
+            fast=fast.next.next;
+        }return slow;
+    }
+    public static void main(String[] args) {
+        LL list=new LL();
+        int i=5;
+        while (i>=1)list.insertAtFirst(i--);
+        System.out.println(list.findMiddle(head).data);
     }
 }
