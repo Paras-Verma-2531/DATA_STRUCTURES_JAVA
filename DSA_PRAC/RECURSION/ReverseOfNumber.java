@@ -5,7 +5,7 @@ public class ReverseOfNumber {
     }
     static int reverse(int n)
     {
-        int len=(int)Math.log10(n)+1;
+        int len=(int)Math.log10(n)+1;//provides length of the number
         return helper(n,len);
     }
     private static int helper(int n, int len) {
