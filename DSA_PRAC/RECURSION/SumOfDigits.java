@@ -17,6 +17,20 @@ public class SumOfDigits {
     {
         if(n<1)return 0;
         return n+sumOfN(n-1);
+    }
+    //private method for swaping of array
+    private void swap(int[]arr,int i,int j)
+    {
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+    public int[] reverseArray(int[]arr,int i)
+    {
+        if(i>=arr.length/2)return arr;
+        swap(arr,i,arr.length-i-1);
+        return reverseArray(arr,i+1);
+    }
     public static  int productOfDigits(int n)
     {
         if(n%10==n)return n;// because it a single no exists its modulu equal to itself
