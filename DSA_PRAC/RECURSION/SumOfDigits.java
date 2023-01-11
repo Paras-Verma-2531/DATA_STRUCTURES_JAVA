@@ -13,6 +13,10 @@ public class SumOfDigits {
         repeating the process till n!=0
          */
     }
+    public int sumOfN(int n)
+    {
+        if(n<1)return 0;
+        return n+sumOfN(n-1);
     public static  int productOfDigits(int n)
     {
         if(n%10==n)return n;// because it a single no exists its modulu equal to itself
