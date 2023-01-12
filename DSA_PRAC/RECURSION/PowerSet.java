@@ -1,4 +1,5 @@
 package DSA_PRAC.RECURSION;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 public class PowerSet {
     /*
@@ -35,8 +36,18 @@ public class PowerSet {
         return left;
     }
     public static void main(String[] args) {
-       ArrayList<String>list=new ArrayList <>();
-        list=new PowerSet().powerSet("abc",0," ");
-        System.out.println(list);
+       ArrayList<Integer>list=new ArrayList <>();
+        //list=new PowerSet().powerSet("abc",0," ");
+        PowerSet.powerSet(new int[]{1,2,3},0,list);
+        //System.out.println(list);
+    }
+    //Striver's approach:;
+    public  static void powerSet(int[]arr,int index,ArrayList<Integer>list)
+    {
+        if(index==arr.length){System.out.println(list);return;}
+        list.add(arr[index]);
+        powerSet(arr,index+1,list);
+        list.remove(list.size()-1);
+       powerSet(arr,index+1,list);
     }
 }
