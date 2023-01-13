@@ -1,5 +1,5 @@
 package DSA_PRAC.RECURSION;
-import java.util.ArrayList;
+
 public class SumEqualsK {
     //all the subsequence with sum==k
 //    public static void sumEqualsK(int[]arr, ArrayList<Integer>list,int index, int sum, int currsum)
@@ -30,23 +30,18 @@ public class SumEqualsK {
     }
     */
     //return no of count's::
-    public static int sumEqualsK(int[]arr, ArrayList<Integer>list,int index, int sum, int currsum)
-    {
-        if(index==arr.length)
-        {if(currsum==sum){
-            //condition satisfied
-            System.out.println(list);return 1;
-        }return 0;
+    public static int sumEqualsK(int[] arr, int index, int sum, int currsum) {
+        if (index == arr.length) {
+            if (currsum == sum) return 1;
+            return 0;
         }
-        list.add(arr[index]);//add the element in the list --->taking
-        currsum+=arr[index];//add it to the currsum as well
-        int left=sumEqualsK(arr,list,index+1,sum,currsum);//pass with additional included sum::
-        list.remove(list.size()-1);//remove from the list
-        currsum-=arr[index];//subtract from curr_sum; --->not taking
-        int right=sumEqualsK(arr, list, index + 1, sum, currsum);
-        return left+right;
+        currsum += arr[index];//add it to the currsum as well
+        int left = sumEqualsK(arr, index + 1, sum, currsum);//pass with additional included sum::
+        currsum -= arr[index];//subtract from curr_sum; --->not taking
+        int right = sumEqualsK(arr, index + 1, sum, currsum);
+        return left + right;
     }
     public static void main(String[] args) {
-        System.out.println(SumEqualsK.sumEqualsK(new int[]{1,2,1},new ArrayList<Integer>(),0,2,0));
+        System.out.println(SumEqualsK.sumEqualsK(new int[]{1, 2, 1}, 0, 2, 0));
     }
 }
