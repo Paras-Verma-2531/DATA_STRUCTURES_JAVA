@@ -16,7 +16,7 @@ public class Quick_Sort {
     {
         int start=initial;int end_p=end;int pivot=array[end];
         while(start<end_p) {
-            while ( start<=end_p &&array[start] <pivot)start++;
+            while ( start<=end_p &&array[start]<pivot)start++;
             while (end_p>start&&array[end_p]>=pivot)end_p--;
             if (start < end_p) {
                 int temp = array[start];
