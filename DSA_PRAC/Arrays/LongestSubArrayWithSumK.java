@@ -16,7 +16,7 @@ public class LongestSubArrayWithSumK {
             }count=0;sum=0;
         }return longest;
     }*/
-    //better Approach:
+    /*better Approach:
     public int longestSubArrayWithSumK(int[]arr,int size,int k)
     {
         Map <Integer,Integer> prefix=new HashMap();
@@ -25,8 +25,21 @@ public class LongestSubArrayWithSumK {
         {
             sum+=arr[i];
             if(prefix.containsKey(sum-k))longest=Math.max(longest,i-prefix.get(sum-k));
-            prefix.put(sum,i);
+            if(!prefix.containsKey(sum))prefix.put(sum,i);
         }return longest;
+    }*/
+    //optimal Solution only for if array contains zeros and pos.
+    public int longestSubArrayWithSumK(int[]arr,int size,int k)
+    { // 2 pointers approach ::
+        int left=0,right=0,sum=arr[0],maxLength=0;
+        while(right<size)
+        {
+            while(left<=right&&sum>k)
+                sum-=arr[left++];
+            if(sum==k)maxLength=Math.max(maxLength,right-left+1);
+            right++;
+            if(right<size)sum+=arr[right];
+        }return maxLength;
     }
 
     public static void main(String[] args) {
