@@ -1,5 +1,34 @@
 package DSA_PRAC.PATTERN;
 public class Pattern_1 {
+    public void summerLearning(){
+//        for(int row=1;row<10;row++)
+//        {
+//            int columnInRow=row>5?10-row:row;
+//            for(int col=1;col<=columnInRow;col++) System.out.print("* ");
+//            System.out.println();
+//        }
+//        for(int row=1;row<=5;row++)
+//        {
+//            for(int col=row;col>=1;col--) System.out.print(col%2==0?"0 ":"1 ");
+//            System.out.println();
+//        }
+//        for(int i=1;i<=4;i++)
+//        {
+//            int columnInRow=i;
+//            int spaceInRow=8-2*i;
+//            for(int col=1;col<=columnInRow;col++) System.out.print(col);
+//            for(int space=1;space<=spaceInRow;space++) System.out.print(" ");
+//            for(int col=columnInRow;col>=1;col--) System.out.print(col);
+//            System.out.println();
+//        }
+//        for(int row=1;row<=5;row++)
+//        {
+//            char ch='E';
+//            for(int j=ch-row+1;j<=ch;j++) System.out.print((char)j);
+//            System.out.println();
+//        }
+        
+    }
     public static void main(String[] args) {
         /*
         pattern1(4);
@@ -8,7 +37,9 @@ public class Pattern_1 {
         System.out.println("\tPattern 3");
         pattern3(5);
          */
-        pattern12(5);
+
+//    pattern12(5);
+        new Pattern_1().summerLearning();
     }
     /*
      *
