@@ -6,7 +6,7 @@ public class InsertionSort {
         for(int i=1;i<size;i++)
         {
             int temp=array[i];
-            k=i-1;
+            k=i-1;// stores the index i,e where to begin
             while(k>=0&&array[k]>temp)
             {
                 //System.out.println("value of k "+array[k]+ " is transferred to "+array[k+1]);
@@ -18,13 +18,12 @@ public class InsertionSort {
     }
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in);
-        int[] arr= new int[10];
-        for(int i=0;i<10;i++)
-        {
-            System.out.print("enter the "+(i+1)+" number: ");
-            arr[i]=in.nextInt();
-        }
-        new InsertionSort().insertionSort(arr,10);
+        System.out.println("Enter the size of array");
+        int size=in.nextInt();
+        int[] arr= new int[size];
+        for(int i=0;i<size;i++)
+         arr[i]=in.nextInt();
+        new InsertionSort().insertionSort(arr,size);
         for(int i:arr)
             System.out.println(i);
     }
