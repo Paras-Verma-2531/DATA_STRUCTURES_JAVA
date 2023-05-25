@@ -27,7 +27,7 @@ public class Pattern_1 {
 //            for(int j=ch-row+1;j<=ch;j++) System.out.print((char)j);
 //            System.out.println();
 //        }
-        
+
     }
     public static void main(String[] args) {
         /*
