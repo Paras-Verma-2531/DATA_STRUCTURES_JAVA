@@ -33,13 +33,13 @@ public class QuickSort {
     }
     public static void main(String[] args) {
         Scanner in= new Scanner(System.in);
-        int[] arr= new int[10];
-        for(int i=0;i<10;i++)
-        {
-            System.out.print("enter the "+(i+1)+" number: ");
-            arr[i]=in.nextInt();
-        }
-        new QuickSort().quickSort(arr,0,9);
+        System.out.print("enter the size of array: ");
+        int size=in.nextInt();
+        int[] arr= new int[size];
+        System.out.println("Enter elements: ");
+        for(int i=0;i<size;i++)
+          arr[i]=in.nextInt();
+        new QuickSort().quickSort(arr,0,size-1);
         for(int i:arr)
             System.out.println(i);
     }
