@@ -1,5 +1,5 @@
 package DSA_PRAC.Arrays;
-import static DSA_PRAC.Arrays.RotateAnArray.swap;
+import static DSA_PRAC.Arrays.LeftRotateAnArray.swap;
 public class MoveZerosToEnd {
     public void moveZerosToEnd(int []arr)
     {
