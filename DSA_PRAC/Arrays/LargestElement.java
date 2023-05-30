@@ -1,5 +1,6 @@
 package DSA_PRAC.Arrays;
 public class LargestElement {
+    //Brute-force : O(nlogn)
     // optimal solution:: O(n)
     // Assume a largest ele. and compare it with each.
     public int findLargest(int[]arr)
@@ -16,6 +17,7 @@ public class LargestElement {
         for(int i: arr)
         {
             // check if current ele is largest but !=firstLargest::
+            // second approach :: store the max in another var. when checking for the max element before updating it
             if(i>secondLargest&&i!=firstLargest)secondLargest=i;
         }return secondLargest;
     }
