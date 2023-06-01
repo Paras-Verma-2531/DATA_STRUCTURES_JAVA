@@ -11,7 +11,6 @@ public class LongestSubArrayWithSumK {
             for(int j=i;j<size;j++)// traverse from i to n :: subarray is contiguous
             {
                 sum+=arr[j];count++;
-                if(sum>k)break;
                 if(sum==k)longest=Math.max(longest,count);
             }count=0;sum=0;
         }return longest;
