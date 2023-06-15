@@ -6,9 +6,11 @@ public class LL {
     {
         this.size=0;
     }
+    // Inner class for user defined datatype i,e Node:
      private class ListNode {
         private int data;
          private ListNode next;
+//         parameterized constructor
         public ListNode(int data, ListNode next) {
             this.data = data;
             this.next = next;
@@ -33,6 +35,7 @@ public class LL {
         head=node;
         if(tail==null)tail=head;
     }
+    //if done without tail pointer, it will take O(N)
     public void insertAtLast(int val)
     {
         if(tail==null){insertAtFirst(val);return;}
