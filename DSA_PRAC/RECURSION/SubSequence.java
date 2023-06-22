@@ -20,9 +20,13 @@ public class SubSequence {
             System.out.println(list.toString());
             return;
         }
+        //add the element to the list
         list.add(arr[index]);
+        // call for the next index with element including
         printSubseq(index+1,list,arr);
-        list.remove(list.size()-1f);
+        // remove the element from the list
+        list.remove(list.size()-1);
+        //Again call for the next index with element being left out
         printSubseq(index+1,list,arr);
     }
     public static void main(String[] args) {
