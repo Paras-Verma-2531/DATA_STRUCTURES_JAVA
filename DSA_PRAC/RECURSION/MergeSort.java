@@ -11,17 +11,54 @@ public class MergeSort {
             merge(array,start,mid,end);
         }
     }
-    private void merge(int[] arr,int start,int mid,int end)
-    { int[] newarr=new int[end-start+1];
-        int i=start,j=mid+1,k=0;
-        while(i<=mid&&j<=end)
+    //with two temp array
+//   private void merge(int[]arr,int start,int mid,int end)
+//   {
+//       int[]arr1=new int[mid-start+1];
+//       int[]arr2=new int[end-mid];
+//       for(int i=0;i<arr1.length;i++)
+//           arr1[i]=arr[i+start];
+//       for(int i=0;i<arr2.length;i++)
+//           arr2[i]=arr[i+mid+1];
+//       int pos1=0,pos2=0;
+//       int k=start;
+//       while(pos1<arr1.length&&pos2<arr2.length)
+//       {
+//           if(arr1[pos1]<=arr2[pos2])arr[k++]=arr1[pos1++];
+//           else arr[k++]=arr2[pos2++];
+//       }
+//       while(pos1<arr1.length)
+//           arr[k++]=arr1[pos1++];
+//       while (pos2<arr2.length)arr[k++]=arr2[pos2++];
+//   }
+    private void merge(int[]arr,int low,int mid,int high)
+    {
+        int left=low;int right=mid+1;
+        int[]temp=new int[high-low+1];
+        int k=0;
+        while(left<=mid&&right<=high)
         {
-            if(arr[i]<arr[j])newarr[k++]=arr[i++];
-            else newarr[k++]=arr[j++];
+            if(arr[left]<=arr[right]) {
+                temp[k] = arr[left];
+                left++;
+            }
+            else
+            {temp[k]=arr[right];right++;}
+            k++;
         }
-        while(i<=mid)newarr[k++]=arr[i++];
-        while(j<=end)newarr[k++]=arr[j++];
-        for(k=start;k<=end;k++)arr[k]=newarr[k-start];
+        while(left<=mid) {
+            temp[k] = arr[left];
+            left++;k++;
+        }
+        while(right<=high) {
+            temp[k] = arr[right];
+            right++;k++;
+        }
+        for(int i=low;i<=high;i++)
+        {
+            arr[i]=temp[i-low];
+        }
+//        System.out.println(Arrays.toString(arr));
     }
     public static void main(String[] args) {
         int[] arr={10,9,8,7,6,5,4,3,2,1};
