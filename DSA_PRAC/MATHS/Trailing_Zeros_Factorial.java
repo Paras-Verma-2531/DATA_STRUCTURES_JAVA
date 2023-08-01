@@ -1,4 +1,4 @@
-package DSA_PRAC;
+package DSA_PRAC.MATHS;
 
 public class Trailing_Zeros_Factorial {
     public int findTrailingZeros(int num)
